@@ -11,5 +11,9 @@ MasterScenefileDB= map( scenename, filename)
 CurrentSceneCommandList
 
 
+for windows: corevn.exe master.story
+(2012-01-04: might have to use master.story as the config file, as gm:studio has several cmdline paramters)
+
+
 
 
