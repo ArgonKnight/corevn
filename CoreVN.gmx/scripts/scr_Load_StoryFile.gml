@@ -6,11 +6,12 @@
 /*
 * Version History
 * 2012-01-04:   file created
-                1st draft of the code
+*               1st draft of the code
+*               changed to use CurrentStoryFilename
 */
 
 //update the var again
-global.FullStoryFilename = working_directory + "\" + global.StoryFilename;
+global.FullStoryFilename = working_directory + "\" + global.CurrentStoryFilename;
 
 //does file exist?
 if file_exists(global.FullStoryFilename)
