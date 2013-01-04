@@ -1,0 +1,15 @@
+story file has a list of scene files
+SceneName=SceneFilename
+
+scene file has a list of command blocks
+block name
+	scene command
+
+	
+MasterScenefileDB= map( scenename, filename)
+
+CurrentSceneCommandList
+
+
+
+
