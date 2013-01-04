@@ -10,9 +10,18 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\script0.gml</script>
+    <script>scripts\scr_CommandLine.gml</script>
+    <script>scripts\scr_Startup.gml</script>
+    <script>scripts\scr_VersionHistory.gml</script>
+    <script>scripts\scr_Load_StoryFile.gml</script>
+    <script>scripts\scr_Shutdown.gml</script>
   </scripts>
+  <objects name="objects">
+    <object>objects\obj_Startup</object>
+  </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rm_Startup</room>
+    <room>rooms\rm_Scene</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
