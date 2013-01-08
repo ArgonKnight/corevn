@@ -1,0 +1,43 @@
+#commented line
+
+#possible list of scene commands
+
+#define sound name filename
+#define music name filename
+#define background name filename
+#define image name filename
+
+#play sound name
+#play music name
+
+#show background name [fade]
+#show image name x,y
+
+#text "text"  $varname
+#text + "text"
+#text blank
+#text pause
+#text clr
+
+#local to loaded scene file
+#var name number
+#var name text
+#set name modifier value
+#modifiers = + -
+
+#global to all scenes
+#global var name number
+#global var name text
+#global set name modifier value
+#modifiers = + -
+  
+#if var = value
+#commands
+#fi
+
+#save
+#load
+
+#scene load name
+#scene reset
+

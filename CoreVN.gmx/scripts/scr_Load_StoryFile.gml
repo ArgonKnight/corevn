@@ -34,19 +34,69 @@ if !file_exists(global.FullStoryFilename)
 var file;
 file = file_text_open_read(global.FullStoryFilename);
 
+/* move this to novel.config!!!
 //read version number
-file_text_read_string(file);
+var version;
+version = file_text_read_string(file);
+version = string_lower(version);
 
 //check version number
+if (version != c_version)
+{
+    //error condition: file is wrong version, or wrong format
+    file_text_close(file);
+    //should call shutdown to exit cleanly
+    scr_Shutdown();
+    exit;
+}
+*/
 
-//read fist scene to play
-file_text_read_string(file);
-
-//loop, read remaining scene names
+//loop, read scene names
+var tmpLine;
 while (!file_text_eof(file))
 {
+    tmpLine = file_text_read_string(file);
     file_text_readln(file);
-}
+    
+    if (tmpLine != "" )
+    {
+    
+        if (string_char_at( tmpLine,1) == "#")
+        { 
+            //then comment, skip line
+            continue;
+        }
+        
+        //look for an =
+        var tmpPos;
+        tmpPos = string_pos("=", tmpLine);
+        if  (tmpPos != 0)
+        {
+            //break tmpLine into 2 parts:  SceneName=Scenefile
+            var tmpScene;
+            tmpScene=string_copy( tmpLine,1, tmpPos-1);
+            if (tmpScene == "" )
+            {
+                //error: scene name blank
+                continue;
+            }
+            var tmpFile;
+            tmpFile=string_copy( tmpLine,tmpPos+1, string_length(tmpLine) );
+            if (tmpfile == "")
+            {
+                //error: scen file blank
+                continue;
+            }
+            
+            //is name duplicate?   
+            if !ds_map_exists( global.SceneList, tmpScene)
+            {
+                //no, then add to master list
+                ds_map_add( global.SceneList, tmpScene, tmpFile);
+            }
+        } //if    
+    }//if
+} //while
 
 //close file
 file_text_close( file );

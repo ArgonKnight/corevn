@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles">
+  <datafiles number="3" name="datafiles">
     <datafile>
       <name>novel.config</name>
       <exists>-1</exists>
@@ -21,6 +21,42 @@
       </ConfigOptions>
       <filename>novel.config</filename>
     </datafile>
+    <datafiles number="3" name="scenes">
+      <datafile>
+        <name>master.story</name>
+        <exists>-1</exists>
+        <size>10</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>32874</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>master.story</filename>
+      </datafile>
+      <datafile>
+        <name>main.scr</name>
+        <exists>-1</exists>
+        <size>669</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>32874</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>main.scr</filename>
+      </datafile>
+    </datafiles>
   </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
@@ -43,6 +79,9 @@
     <room>rooms\rm_Startup</room>
     <room>rooms\rm_Scene</room>
   </rooms>
+  <constants number="1">
+    <constant name="c_version">version=1</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
