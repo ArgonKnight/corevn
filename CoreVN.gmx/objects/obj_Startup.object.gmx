@@ -129,6 +129,8 @@
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>601</id>
