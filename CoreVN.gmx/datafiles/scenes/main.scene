@@ -7,11 +7,15 @@
 #define background name filename
 #define image name filename
 
-#play sound name
-#play music name
+#cache in memory
+load background name
+unload background name
 
 #show background name [fade]
 #show image name x,y
+
+#play sound name
+#play music name
 
 #text "text"  $varname
 #text + "text"

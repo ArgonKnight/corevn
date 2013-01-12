@@ -11,4 +11,9 @@
 
 2012-01-07: added more noveel.config fields
             started on what to read from a story file.
+            
+2013-01-11: switched to using the startup/end events of GM:S
+            adding a logfile to track debug messages during startup/end events
+            refactored Novel.Config
+            need to finalize Story file layout next.
 */

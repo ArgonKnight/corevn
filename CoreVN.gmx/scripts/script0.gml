@@ -1,24 +1,33 @@
-//2013-01-04
+//2013-01-11
 //Main App Structure
 /*
     
 
-Startup:
+On_Game_Start:
 
-    set default values
+    set global default values
     
     check command line paramters
 
     load main story file
 
-Loop:
-    
+On_Room_Start:
+
     load scene
+    
+On_Loop:
+    
+    play scene command
 
-    play scene
+    wait for input
+    
+On_Room_End:
 
-Shutdown:
+    unload scene
+    
+    
+On_Game_End:
 
-    Clean vars
+    Clean global vars
 
 */

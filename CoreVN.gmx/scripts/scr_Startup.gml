@@ -11,6 +11,7 @@
 * 2013-01-07:   added new fields to be read from config file:
 *               author, backgrounds, foregrounds, scripts, sounds, fonts
 *               added global.SceneList to hold Scene Names and their file names
+* 2013-01-11:   added ContentFolder to replace folder vars
 */
 
 
@@ -27,24 +28,6 @@ global.NovelTitle = "";
 globalvar Author;
 global.Author="";
 
-globalvar BackgroundFolder;
-global.BackgroundFolder="";
-
-globalvar ForegroundFolder;
-global.ForegroundFolder="";
-
-globalvar SoundFolder;
-global.SoundFolder="";
-
-globalvar ScriptFolder;
-global.ScriptFolder="";
-
-globalvar FontFolder;
-global.FontFolder="";
-
-
-/* Story File Section */
-
 //Stores the Story Filename
 //this file contains the list of scenes to be played
 globalvar CurrentStoryFilename;
@@ -57,10 +40,15 @@ globalvar FullStoryFilename;
 //have to init later....
 global.FullStoryFilename = "";
 
+/* Story File Section */
+
 //holds the SceneName and its filename
 //SceneNames must be unique
 globalvar SceneList;
 global.SceneList = ds_map_create();
 
 
+
+globalvar ContentFolder;
+global.ContentFolder="";
 

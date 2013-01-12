@@ -40,7 +40,7 @@
         <filename>master.story</filename>
       </datafile>
       <datafile>
-        <name>main.scr</name>
+        <name>main.scene</name>
         <exists>-1</exists>
         <size>669</size>
         <exportAction>2</exportAction>
@@ -60,27 +60,50 @@
   </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_Background</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\script0.gml</script>
-    <script>scripts\scr_CommandLine.gml</script>
-    <script>scripts\scr_Startup.gml</script>
     <script>scripts\scr_VersionHistory.gml</script>
-    <script>scripts\scr_Load_StoryFile.gml</script>
-    <script>scripts\scr_Shutdown.gml</script>
-    <script>scripts\scr_Load_NovelConfig.gml</script>
+    <scripts name="On_Game_Start">
+      <script>scripts\scr_OnGameStart.gml</script>
+      <script>scripts\scr_Startup.gml</script>
+      <script>scripts\scr_CommandLine.gml</script>
+      <script>scripts\scr_Load_NovelConfig.gml</script>
+      <script>scripts\scr_Load_StoryFile.gml</script>
+      <script>scripts\scr_Open_Logfile.gml</script>
+    </scripts>
+    <scripts name="On_Game_End">
+      <script>scripts\scr_OnGameEnd.gml</script>
+      <script>scripts\scr_Shutdown.gml</script>
+      <script>scripts\scr_Close_Logfile.gml</script>
+    </scripts>
+    <scripts name="On_Room_Start">
+      <script>scripts\scr_OnRoomStart.gml</script>
+      <script>scripts\scr_LoadScene.gml</script>
+    </scripts>
+    <scripts name="On_Room_End">
+      <script>scripts\scr_OnRoomEnd.gml</script>
+    </scripts>
+    <scripts name="On_Room_Loop">
+      <script>scripts\scr_Cmd_Define.gml</script>
+      <script>scripts\scr_Cmd_Background.gml</script>
+    </scripts>
+    <scripts name="Common">
+      <script>scripts\scr_Write_Logfile.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_Startup</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Startup</room>
-    <room>rooms\rm_Scene</room>
   </rooms>
   <constants number="1">
-    <constant name="c_version">version=1</constant>
+    <constant name="c_version">"1"</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

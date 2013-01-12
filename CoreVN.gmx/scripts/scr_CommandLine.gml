@@ -29,3 +29,6 @@ if (param_num > 0)
     }
 }
 */
+
+globalvar DebugMode;
+global.DebugMode = 1;

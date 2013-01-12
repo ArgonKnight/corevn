@@ -13,5 +13,4 @@
 
 ds_map_destroy( global.SceneList );
 
-//we are done. exit...
-game_end();
+

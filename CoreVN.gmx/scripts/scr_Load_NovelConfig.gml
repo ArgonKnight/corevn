@@ -8,10 +8,30 @@
 * 2013-01-04:   created
 * 2013-01-07:   added new fields to be read from config file:
 *               author, backgrounds, foregrounds, scripts, sounds, fonts
+* 2013-01-11:   now checking for story version
+*               added settings section
+*              
 */
+
+scr_Write_Logfile( "Opening " + global.NovelConfigFilename );
 
 //open file
 ini_open(global.NovelConfigFilename);
+
+//read version number
+var tmpVersion;
+tmpVersion = ini_read_string("settings", "version", "");
+
+//check version number
+if (tmpVersion != c_version)
+{
+    //error condition: file is wrong version, or wrong format
+    scr_Write_Logfile("Error: This app can not read a Version " + version + " story.");
+    
+    //should call shutdown to exit cleanly
+    game_end();
+    exit;
+}
 
 //read story file to play
 global.CurrentStoryFilename = ini_read_string("novel","story","master.story");
@@ -24,20 +44,12 @@ window_set_caption(global.NovelTitle);
 global.Author = ini_read_string("novel","author","");
 
 
-//read background image folder
-global.BackgroundFolder = ini_read_string("content","backgrounds","");
 
-//read foreground image folder
-global.ForgroundFolder = ini_read_string("content","foregrounds","");
-
-//read script folder
-global.ScriptFolder = ini_read_string("content","scripts","");
-
-//read sound folder
-global.SoundFolder = ini_read_string("content","sounds","");
-
-//read font folder
-global.FontFolder = ini_read_string("content","fonts","");
+//read settings
+//..todo..
+//window settings
+//saved game folder
+//framerate?
 
 //close file
 ini_close();
